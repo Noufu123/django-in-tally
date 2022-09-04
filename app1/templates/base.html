@@ -219,6 +219,57 @@
                         </li>
                         <li>
                             <a href="javascript:;" class="has-arrow">
+                                <div class="parent-icon">
+                                </div>
+                                <div class="menu-title">Trial Balance</div>
+                            </a>
+                            <ul>
+                                <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Branch/Division</a>
+                                    <ul>
+                                        <li><a href="{% url 'trialbalance' %}"><i class=""></i>TrialBalance</a>
+                                        </li>
+                                        <li><a href="{% url 'groupsummarypage' %}"><i class=""></i>Group Summary</a>
+                                        </li>
+                                        <li><a href=""><i class=""></i>Ledger Monthly Sumary</a>
+                                        </li>
+                                        <li><a href=""><i class=""></i>Ledger Voucher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Sales Account</a>
+                                    <ul>
+                                        <li><a href="{% url 'sgroup_summary_page' %}"><i class=""></i>Group Summary</a>
+                                        </li>
+                                        <li><a href="#"><i class=""></i>Ledger Monthly Summary</a>
+                                        </li>
+                                        <li><a href="{% url 'sledger_voucher' %}"><i class=""></i>Ledger Voucher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Purchase Account</a>
+                                    <ul>
+                                        <li><a href="{% url 'pgroup_summary' %}"><i class=""></i>>Group Summary</a>
+                                        </li>
+                                        <li><a href="{% url 'pledger_m_summary_page' %}"><i class=""></i>Ledger Monthly Summary</a>
+                                        </li>
+                                        <li><a href="{% url 'pledger_voucher' %}"><i class=""></i>Ledger Voucher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Direct Incomes</a>
+                                    <ul>
+                                        <li><a href="{% url 'dgroup_summary' %}"><i class=""></i>Group Summary</a>
+                                        </li>
+                                        <li><a href="{% url 'dledger_m_summary_page' %}"><i class=""></i>Ledger Monthly Summary</a>
+                                        </li>
+                                        <li><a href="{% url 'dledger_voucher' %}"><i class=""></i>Ledger Voucher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="has-arrow">
                                 <div class="parent-icon"><i class="bx bx-home-alt"></i>
                                 </div>
                                 <div class="menu-title">Create</div>

@@ -15,8 +15,23 @@ urlpatterns = [
     path('voucher',views.voucher,name='voucher'),
     path('vouchpage',views.vouchpage,name='vouchpage'),
 
+    # My Html Pages
 
+    path('trialbalance',views.trialbalance,name='trialbalance'),
+    path('groupsummarypage',views.groupsummarypage,name='groupsummarypage'),
+    path('ledger_m_summary_page/<int:pk>',views.ledger_m_summary_page,name='ledger_m_summary_page'),
+    path('ledger_voucher_page/<int:pk>',views.ledger_voucher_page,name='ledger_voucher_page'),
 
+    path('sgroup_summary_page',views.sgroup_summary_page,name='sgroup_summary_page'),
+    path('sledger_m_summary_page/<int:pk>',views.sledger_m_summary_page,name='sledger_m_summary_page'),
+    path('sledger_voucher',views.sledger_voucher,name='sledger_voucher'),
 
+    path('pgroup_summary',views.pgroup_summary,name='pgroup_summary'),
+    path('pledger_m_summary_page',views.pledger_m_summary_page,name='pledger_m_summary_page'),
+    path('pledger_voucher',views.pledger_voucher,name='pledger_voucher'),
+
+    path('dgroup_summary',views.dgroup_summary,name='dgroup_summary'),
+    path('dledger_m_summary_page',views.dledger_m_summary_page,name='dledger_m_summary_page'),
+    path('dledger_voucher',views.dledger_voucher,name='dledger_voucher'),
     
 ]
