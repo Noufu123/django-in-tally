@@ -32,21 +32,29 @@
                                 <td rowspan="3"  class="align-middle">Particular</td>
                                 <td colspan="6" class="text-center"><h6>{{ adata.sperticulars }}</h6><h5>ABC pvt.ltd</h5>For 1-Apr-2022</td>
                               </tr>
-                              <tr>
-                                <td colspan="3" class="text-center">Transations</td>
-                                <td colspan="3" class="text-center">Closing Balance</td>
-                              </tr>
-                              <tr>
-                                <td>Value</td>
-                                <td>Quantity</td>
-                              </tr>
+                              <tr> <th colspan="2"class="a" >Transations</th>
+                                <th colspan="2"class="a" >Closing Balance</th>
+                            </tr>
+                            <tr><th class="a" >Debit</th><th class="a">Credit</th>
+                                
+                                
+                            </tr> 
                               <tbody>
                                 <tr>
                                     <td><span style="font-style: italic;">Opening Balance</span></td>
                                     <td></td>
                                     <td></td>
+                                    <td>{{ adata.sopeningbalace }}</td>
                                 </tr>
-                                <tr>
+                                {% for i in bdata %}
+                                    <tr>
+                                        <td style="text-align: left;"><a href="{% url 'sledger_voucher' i.id %}">{{ i.sperticulars }}</a></td>
+                                        <td>{{ i.sdebit }}</td>
+                                        <td>{{ i.scredit }}</td>
+                                        <td>{{ i.sclosingbalance }}</td>
+                                    </tr>
+                                {% endfor %}
+                                <!-- <tr>
                                     <td style="text-align: left;"><a href=""><h6>April</h6></a></td>
                                     <td></td>
                                     <td></td>
@@ -94,15 +102,16 @@
                                     <tr><td style="text-align: left;" ><a href=""><h6>March</h6></a></td>
                                         <td></td>
                                         <td></td>
-                                    </tr>
+                                    </tr> -->
                             
                                     
                             </tbody>
                             <tfoot>
                                 <tr style=" border-top: 1.5px solid rgb(100, 107, 114);">
                                     <td class="b">Grand Total</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ sum1 }}</td>
+                                    <td>{{ sum2 }}</td>
+                                    <td>{{ sum3 }}</td>
                                 </tr>
                             </tfoot>
                           </table>

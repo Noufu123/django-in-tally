@@ -28,25 +28,33 @@
                       </div>
                       <div class="table-responsive">
                           <table class="table table-bordered table-sm border-dark" style="background-color: rgba(33,57,77,255);color:#fff;">
-                              <tr>
+                            <tr>
                                 <td rowspan="3"  class="align-middle">Particular</td>
-                                <td colspan="6" class="text-center"><h6>Bank Branch</h6><h5>ABC pvt.ltd</h5>For 1-Apr-2022</td>
+                                <td colspan="6" class="text-center"><h6>{{ adata.dperticulars }}</h6><h5>ABC pvt.ltd</h5>For 1-Apr-2022</td>
                               </tr>
-                              <tr>
-                                <td colspan="3" class="text-center">Transations</td>
-                                <td colspan="3" class="text-center">Closing Balance</td>
-                              </tr>
-                              <tr>
-                                <td>Value</td>
-                                <td>Quantity</td>
-                              </tr>
+                              <tr> <th colspan="2"class="a" >Transations</th>
+                                <th colspan="2"class="a" >Closing Balance</th>
+                            </tr>
+                            <tr><th class="a" >Debit</th><th class="a">Credit</th>
+                                
+                                
+                            </tr> 
                               <tbody>
                                 <tr>
                                     <td><span style="font-style: italic;">Opening Balance</span></td>
                                     <td></td>
                                     <td></td>
+                                    <td>{{ adata.dopeningbalace }}</td>
                                 </tr>
+                                {% for i in bdata %}
                                 <tr>
+                                    <td style="text-align: left;"><a href="{% url 'dledger_voucher' i.id %}">{{ i.dperticulars }}</a></td>
+                                    <td>{{ i.ddebit }}</td>
+                                    <td>{{ i.dcredit }}</td>
+                                    <td>{{ i.dclosingbalance }}</td>
+                                </tr>
+                                {% endfor %}
+                                <!-- <tr>
                                     <td style="text-align: left;"><a href=""><h6>April</h6></a></td>
                                     <td></td>
                                     <td></td>
@@ -94,15 +102,16 @@
                                     <tr><td style="text-align: left;" ><a href=""><h6>March</h6></a></td>
                                         <td></td>
                                         <td></td>
-                                    </tr>
+                                    </tr> -->
                             
                                     
                             </tbody>
                             <tfoot>
                                 <tr style=" border-top: 1.5px solid rgb(100, 107, 114);">
                                     <td class="b">Grand Total</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ sum1 }}</td>
+                                    <td>{{ sum2 }}</td>
+                                    <td>{{ sum3 }}</td>
                                 </tr>
                             </tfoot>
                           </table>

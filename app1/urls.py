@@ -24,14 +24,14 @@ urlpatterns = [
 
     path('sgroup_summary_page',views.sgroup_summary_page,name='sgroup_summary_page'),
     path('sledger_m_summary_page/<int:pk>',views.sledger_m_summary_page,name='sledger_m_summary_page'),
-    path('sledger_voucher',views.sledger_voucher,name='sledger_voucher'),
+    path('sledger_voucher/<int:pk>',views.sledger_voucher,name='sledger_voucher'),
 
     path('pgroup_summary',views.pgroup_summary,name='pgroup_summary'),
-    path('pledger_m_summary_page',views.pledger_m_summary_page,name='pledger_m_summary_page'),
-    path('pledger_voucher',views.pledger_voucher,name='pledger_voucher'),
+    path('pledger_m_summary_page/<int:pk>',views.pledger_m_summary_page,name='pledger_m_summary_page'),
+    path('pledger_voucher/<int:pk>',views.pledger_voucher,name='pledger_voucher'),
 
     path('dgroup_summary',views.dgroup_summary,name='dgroup_summary'),
-    path('dledger_m_summary_page',views.dledger_m_summary_page,name='dledger_m_summary_page'),
-    path('dledger_voucher',views.dledger_voucher,name='dledger_voucher'),
+    path('dledger_m_summary_page/<int:pk>',views.dledger_m_summary_page,name='dledger_m_summary_page'),
+    path('dledger_voucher/<int:pk>',views.dledger_voucher,name='dledger_voucher'),
     
 ]

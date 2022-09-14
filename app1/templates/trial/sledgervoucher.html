@@ -30,7 +30,7 @@
           <div class="table-responsive">
             <table class="table table-bordered table-sm border-dark" style="background-color: rgba(33,57,77,255);color:#fff;">
               <tr class="border-1">
-                <th colspan="4"  class="border-0">Stock Item : Bank Branch</th>
+                <th colspan="4"  class="border-0">Ledger :{{ data.sBranchsummary_frgn.sperticulars }}</th>
                 <th colspan="4" class="text-end border-0">For : 1-Apr-2022</th>
               </tr>
               <!-- <tr class="border-1">
@@ -46,41 +46,51 @@
                   <th>Credit</th>
                 </tr>
               <tbody>
+                {% for i in ndata %}
                 <tr>
-                  <td>1-Apr-2022</td>
-                  <td>HDFC</td>
-                  <td>Receipt</td>
-                  <td>12</td>
-                  <td></td>
-                  <td>13000</td>
+                  <td>{{ i.sdate }}</td>
+                  <td>{{ i.sperticular }}</td>
+                  <td>{{ i.svchtype }}</td>
+                  <td>{{ i.svchno }}</td>
+                  <td>{{ i.sdebit }}</td>
+                  <td>{{ i.scredit }}</td>
                 </tr>
+                {% endfor %}
                 
-                  <tr>
+                  <!-- <tr>
                     <td>1-Apr-2022</td>
                     <td>HDFC</td>
                     <td>Payment</td>
                     <td>17</td>
                     <td>2000</td>
                     <td></td>
-                  </tr>
-                
+                  </tr> -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Opening Balance:</td>
+                  <td colspan="3">{{ sum3 }}</td>
+                  
+                </tr>
                 <tr>
                   <td></td>
                   <td></td>
                   <td></td>
                   <td>Curent Total:</td>
-                  <td>2000</td>
-                  <td>13000</td>
+                  <td>{{ sum1 }}</td>
+                  <td>{{ sum2 }}</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>Closing Balance:</td>
-                    <td></td>
-                    <td>11000</td>
+                    <td colspan="3">{{ cbalance }}</td>
                   </tr>
-              </tbody>
+                </tfoot>
             </table>
           </div>
         </div>

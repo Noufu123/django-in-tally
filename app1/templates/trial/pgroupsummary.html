@@ -30,7 +30,9 @@
                           <table class="table table-bordered table-sm border-dark" style="background-color: rgba(33,57,77,255);color:#fff;">
                               <tr>
                                 <td rowspan="6"  class="align-middle">Particular</td>
-                                <td colspan="4" class="text-center"><h6>Sales Account</h6><h5>ABC Pvt.ltd</h5>For 1-Apr-2022</td>
+                                <td colspan="4" class="text-center"><h6>Purchase Account</h6>
+                                    {% for i in ndata %}
+                                    <h5>{{ i.name }}</h5>{% endfor %}For 1-Apr-2022</td>
                               </tr>
                               <tr> 
                                 <td colspan="2" class="text-center">Closing Balance</td>
@@ -39,18 +41,22 @@
                                 <td>Debit</td>
                                 <td>Credit</td>
                               </tr>
-                              <tbody>
+                                <tbody>
+                                    {% for i in bdata %}
                                     <tr>
-                                        <td><a href=""></a>Bank Branch</td>
-                                        <td></td>
-                                        <td>11000</td>
+                                        <td><a href="{% url 'pledger_m_summary_page' i.id %}">{{ i.pperticulars }}</a></td>
+                                        <td>{{ i.pdebit }}</td>
+                                        <td>{{ i.pcredit }}</td>
                                     </tr>
+                                    {% endfor %}
+                                </tbody>
+                                <tfoot>
                                   <tr>
                                       <td>Grand Total</td>
-                                      <td></td> 
-                                      <td>11000</td>
+                                      <td>{{ sum1 }}</td> 
+                                      <td>{{ sum2 }}</td>
                                   </tr>
-                              </tbody>
+                                </tfoot>
                           </table>
                         </div>
                   </div>
